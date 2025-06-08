@@ -1,4 +1,7 @@
 @use 'utopia-core-scss/src/utopia' as utopia;
 
+// Base
+@use 'base/fonts';
+
 // Utilities
 @use 'utilities/accessibility';

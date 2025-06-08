@@ -1,0 +1,62 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Space Grotesk';
+  font-weight: 400;
+  src:
+    url('/fonts/space-grotesk-v21-latin_latin-ext-regular.woff2') format('woff2'),
+    url('/fonts/space-grotesk-v21-latin_latin-ext-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Space Grotesk';
+  font-weight: 700;
+  src:
+    url('/fonts/space-grotesk-v21-latin_latin-ext-700.woff2') format('woff2'),
+    url('/fonts/space-grotesk-v21-latin_latin-ext-700.ttf') format('truetype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Jost';
+  font-weight: 500;
+  src:
+    url('public/fonts/jost-v19-latin_latin-ext-500.woff2') format('woff2'),
+    url('public/fonts/jost-v19-latin_latin-ext-500.ttf') format('truetype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Jost';
+  font-weight: 600;
+  src:
+    url('/fonts/jost-v19-latin_latin-ext-600.woff2') format('woff2'),
+    url('/fonts/jost-v19-latin_latin-ext-600.ttf') format('truetype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Jost';
+  font-weight: 700;
+  src:
+    url('/fonts/jost-v19-latin_latin-ext-700.woff2') format('woff2'),
+    url('/fonts/jost-v19-latin_latin-ext-700.ttf') format('truetype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Plus Jakarta Sans';
+  font-weight: 400;
+  src:
+    url('/fonts/plus-jakarta-sans-v11-latin_latin-ext-regular.woff2') format('woff2'),
+    url('/fonts/plus-jakarta-sans-v11-latin_latin-ext-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Plus Jakarta Sans';
+  font-weight: 800;
+  src:
+    url('/fonts/plus-jakarta-sans-v11-latin_latin-ext-800.woff2') format('woff2'),
+    url('/fonts/plus-jakarta-sans-v11-latin_latin-ext-800.ttf') format('truetype');
+}
