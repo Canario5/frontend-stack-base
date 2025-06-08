@@ -1,0 +1,89 @@
+@use 'utopia-core-scss/src/utopia' as utopia;
+@use '../abstracts/variables' as vars;
+
+//!TODO: check how it will work with variables with units (and rems)
+:root {
+  @include utopia.generateClamps(
+    (
+      'minWidth': 320,
+      'maxWidth': 1367,
+      'pairs': (
+        (54, 76),
+        (44, 60),
+        (42, 55),
+        (36, 48),
+        (24, 30),
+        (21, 28),
+        (20, 26),
+        (18, 24),
+        (15, 20),
+        (14, 18),
+        (12, 16),
+        (11, 14),
+      ),
+      'prefix': 'text-',
+    )
+  );
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: vars.$font-family-base;
+  line-height: vars.$line-height-base;
+  color: vars.$color-text;
+  font-weight: vars.$font-weight-regular;
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+p {
+  overflow-wrap: break-word;
+  hyphens: auto;
+  text-wrap: pretty;
+  margin: 0;
+  max-width: 65ch;
+}
+
+@mixin text($size, $family: null, $weight: vars.$font-weight-regular, $line-height: vars.$line-height-base) {
+  font-size: var(--text-#{$size});
+
+  @if $family == 'grotesk' {
+    font-family: vars.$font-family-space-grotesk;
+  } @else if $family == 'jost' {
+    font-family: vars.$font-family-jost;
+  } @else if $family == 'jakarta' {
+    font-family: vars.$font-family-plus-jakarta;
+  } @else {
+    font-family: vars.$font-family-base;
+  }
+
+  font-weight: $weight;
+  line-height: $line-height;
+}
