@@ -4,6 +4,7 @@
 @use 'abstracts/media-queries' as mq;
 
 // Base
+@use 'base/reset';
 @use 'base/fonts';
 
 // Utilities
