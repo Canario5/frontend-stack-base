@@ -1,0 +1,28 @@
+// Abstracts
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mixins;
+@use '../base/typography';
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: vars.$background-color;
+}
+
+main {
+  flex: 1;
+}
+
+a {
+  color: inherit;
+  @include mixins.text-hover-color(vars.$link-color-primary, 0.2s);
+
+  cursor: pointer;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+// https://piccalil.li/blog/a-more-modern-css-reset/
+:target {
+  scroll-margin-block: 5ex;
+}
