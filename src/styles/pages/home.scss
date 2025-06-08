@@ -1,0 +1,7 @@
+@use '../abstracts/spacing' as space;
+
+.noice {
+  background: hotpink;
+  padding: var(--space-4) var(--space-48) var(--space-16) var(--space-128);
+  padding-right: space.range(8, 16);
+}

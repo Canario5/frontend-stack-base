@@ -1,0 +1,35 @@
+//! TODO: Change site min and max values to variables from variables
+
+// SPACING (in px)
+$spacing-sizes: (4, 8, 12, 16, 20, 24, 32, 40, 48, 56, 64, 80, 96, 128, 160, 192, 224, 256);
+
+//* HOW TO USE: //
+// Just use ass classic css var
+// padding: var(--space-4) var(--space-48) var(--space-16) var(--space-128);
+
+:root {
+  @each $size in $spacing-sizes {
+    $min-size: $size * 0.7;
+    $max-size: $size;
+
+    --space-#{$size}: clamp(
+      #{$min-size}px,
+      #{$min-size}px + (#{$max-size - $min-size}) * (100vw - 320px) / (1367 - 320),
+      #{$max-size}px
+    );
+  }
+}
+
+//? Maybe in future add start and end range?
+//* HOW TO USE: //
+// import in file with @use '../abstracts/spacing' as space;
+// padding-right: space.range(minValuePx, maxValuePx);
+// padding-right: space.range(8, 16);
+
+@function range($min-size, $max-size) {
+  @return clamp(
+    #{$min-size}px,
+    #{$min-size}px + (#{$max-size - $min-size}) * (100vw - 320px) / (1367 - 320),
+    #{$max-size}px
+  );
+}
