@@ -1,0 +1,21 @@
+@use './variables' as vars;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin text-hover-color(
+  $color,
+  $transition-duration: vars.$transition-duration-default,
+  $transition-easing: vars.$transition-curve-default,
+  $transition-delay: vars.$transition-delay-default
+) {
+  transition: color #{$transition-duration} #{$transition-easing} #{$transition-delay};
+  &:hover,
+  &:focus-visible,
+  &:active {
+    color: $color;
+  }
+}

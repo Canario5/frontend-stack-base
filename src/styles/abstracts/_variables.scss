@@ -43,4 +43,7 @@ $font-weight-bold: 700;
 $font-weight-extra-bold: 800;
 
 $border-radius-base: 4px;
-$transition-easing-custom: cubic-bezier(0.77, 0, 0.175, 1);
+
+$transition-duration-default: 0.3s;
+$transition-curve-default: ease;
+$transition-delay-default: 0s;
