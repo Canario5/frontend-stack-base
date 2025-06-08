@@ -3,8 +3,8 @@
 // Abstracts
 @use 'abstracts/variables' as vars;
 @use 'abstracts/mixins' as mixins;
+@use 'abstracts/spacing' as space;
 @use 'abstracts/media-queries' as mq;
-@use 'abstracts/spacing';
 
 // Base
 @use 'base/reset';
