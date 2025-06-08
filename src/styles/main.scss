@@ -1,5 +1,8 @@
 @use 'utopia-core-scss/src/utopia' as utopia;
 
+// Abstracts
+@use 'abstracts/media-queries' as mq;
+
 // Base
 @use 'base/fonts';
 

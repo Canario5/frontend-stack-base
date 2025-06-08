@@ -1,0 +1,90 @@
+@mixin max479px {
+  @media (max-width: 29.9375rem) {
+    @content;
+  }
+}
+
+@mixin min480px {
+  @media (min-width: 30rem) {
+    @content;
+  }
+}
+
+@mixin max767px {
+  @media (max-width: 47.9375rem) {
+    @content;
+  }
+}
+
+@mixin min768px {
+  @media (min-width: 48rem) {
+    @content;
+  }
+}
+
+@mixin max1023px {
+  @media (max-width: 63.9375rem) {
+    @content;
+  }
+}
+
+@mixin min1024px {
+  @media (min-width: 64rem) {
+    @content;
+  }
+}
+
+@mixin max1279px {
+  @media (max-width: 79.9375rem) {
+    @content;
+  }
+}
+
+@mixin min1280px {
+  @media (min-width: 80rem) {
+    @content;
+  }
+}
+
+@mixin maxFull {
+  @media (max-width: 85.375rem) {
+    @content;
+  }
+}
+
+@mixin minFull {
+  @media (min-width: 85.4375rem) {
+    @content;
+  }
+}
+
+/* 768px to 1023px */
+@mixin tabletOnly {
+  @media (min-width: 48rem) and (max-width: 63.9375rem) {
+    @content;
+  }
+}
+
+@mixin isCoarsePointer {
+  @media (pointer: coarse) {
+    @content;
+  }
+}
+
+@mixin isFinePointer {
+  @media (pointer: fine) {
+    @content;
+  }
+}
+
+@mixin canHover {
+  @media (hover: hover) {
+    @content;
+  }
+}
+
+@mixin cannotHover {
+  @media (hover: none) {
+    @content;
+  }
+}
