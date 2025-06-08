@@ -1,6 +1,7 @@
 @use 'utopia-core-scss/src/utopia' as utopia;
 
 // Abstracts
+@use 'abstracts/variables' as vars;
 @use 'abstracts/media-queries' as mq;
 
 // Base
