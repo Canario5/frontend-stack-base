@@ -13,9 +13,7 @@
   $transition-delay: vars.$transition-delay-default
 ) {
   transition: color #{$transition-duration} #{$transition-easing} #{$transition-delay};
-  &:hover,
-  &:focus-visible,
-  &:active {
+  &:where(:hover, :focus-visible, :active) {
     color: $color;
   }
 }
