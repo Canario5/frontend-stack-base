@@ -5,14 +5,14 @@ $spacing-sizes: (4, 8, 12, 16, 20, 24, 32, 40, 48, 56, 64, 80, 96, 128, 160, 192
 
 //* HOW TO USE: //
 // Just use ass classic css var
-// padding: var(--space-4) var(--space-48) var(--space-16) var(--space-128);
+// padding: var(--size-4) var(--size-48) var(--size-16) var(--size-128);
 
 :root {
   @each $size in $spacing-sizes {
     $min-size: $size * 0.7;
     $max-size: $size;
 
-    --space-#{$size}: clamp(
+    --size-#{$size}: clamp(
       #{$min-size}px,
       #{$min-size}px + (#{$max-size - $min-size}) * (100vw - 320px) / (1367 - 320),
       #{$max-size}px
