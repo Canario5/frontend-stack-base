@@ -1,0 +1,29 @@
+@use '../abstracts/variables' as vars;
+@use '../abstracts/spacing' as space;
+@use '../abstracts/mixins' as mixins;
+@use '../base/typography' as typo;
+
+.btn {
+  @include mixins.flex-center;
+  width: max-content;
+  padding: space.range(10, 12) space.range(26, 32);
+  border-radius: 40px;
+  cursor: pointer;
+  transition: background-color vars.$transition-duration-default vars.$transition-curve-default;
+
+  &:focus-visible {
+    outline: 2px solid vars.$secondary-500;
+    outline-offset: 2px;
+  }
+}
+
+.btn--primary {
+  background-color: vars.$primary-500;
+  color: vars.$neutral-white;
+
+  @include typo.text('15-16', 'jost', vars.$font-weight-medium, 1.5);
+
+  &:hover {
+    background-color: vars.$secondary-500;
+  }
+}
