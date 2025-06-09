@@ -20,10 +20,11 @@
 @use 'components/mobile-menu-toggle';
 @use 'components/service-card';
 @use 'components/staff-slider';
+@use 'components/hours-box';
 
 // Layout
 @use 'layout/header';
 @use 'layout/menu';
 
 // Pages
-@use 'pages/home';
+@use 'pages/home/home';

@@ -1,0 +1,82 @@
+@use '../abstracts/spacing' as space;
+@use '../abstracts/variables' as vars;
+@use '../base/typography' as typo;
+@use '../abstracts/mixins' as mixins;
+
+//* From 7 to 18h -> 11h
+//* 15min blocks (4x per hour)
+//* so 11 * 4 = 44 blocks
+$grid-init: repeat(44, 1fr);
+
+.hours-box {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: space.range(12, 28) space.range(8, 20);
+
+  &__header,
+  &__body {
+    display: contents;
+  }
+
+  &__row {
+    display: contents;
+  }
+
+  &__day-label,
+  &__day {
+    grid-column: 1;
+    @include typo.text('15-18', 'jost', vars.$font-weight-medium, 1);
+    color: vars.$secondary-500;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    padding: var(--size-8) 0;
+  }
+
+  &__header {
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-columns: $grid-init;
+  }
+
+  &__time-marker {
+    @include typo.text('13-14', 'space-grotesk', vars.$font-weight-bold, 1.375);
+    color: vars.$neutral-gray-300;
+
+    &--0800h {
+      grid-column: 5;
+    }
+    &--1000h {
+      grid-column: 13;
+    }
+    &--1200h {
+      grid-column: 21;
+    }
+    &--1400h {
+      grid-column: 29;
+    }
+    &--1600h {
+      grid-column: 37;
+    }
+    &--1800h {
+      grid-column: 45;
+    }
+  }
+
+  &__slots {
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: $grid-init;
+    height: var(--size-32);
+  }
+
+  &__time-slot {
+    @include mixins.flex-center;
+    @include typo.text('13-14', 'space-grotesk', vars.$font-weight-bold, 1.2);
+    color: vars.$secondary-500;
+    white-space: nowrap;
+    background-color: vars.$primary-300;
+    border-radius: space.range(8, 32); //* Smaller border radius appear fuller than bigger
+    padding: var(--size-8) var(--size-12);
+  }
+}

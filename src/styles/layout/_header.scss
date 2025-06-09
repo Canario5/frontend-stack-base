@@ -26,7 +26,7 @@
   }
 
   &__logo {
-    @include typo.text('16-24', 'jost', vars.$font-weight-medium);
+    @include typo.text('18-24', 'jost', vars.$font-weight-medium);
     color: vars.$primary-500;
     z-index: 1000;
     flex-shrink: 1;
