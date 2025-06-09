@@ -1,0 +1,68 @@
+@use '../abstracts/variables' as vars;
+@use '../abstracts/media-queries' as mq;
+@use '../abstracts/touch' as touch;
+@use 'sass:math';
+
+$container-width: 48px;
+$container-height: 48px;
+$bar-height: 2px;
+$center-position: math.div($container-height - $bar-height, 2);
+$bar-spacing: 12px;
+$bar-color: vars.$neutral-gray-300;
+$bar-hover-color: vars.$link-color-primary;
+
+.mobile-menu-toggle {
+  position: relative;
+  display: block;
+  width: $container-width;
+  height: $container-height;
+  background: transparent;
+  z-index: 9999;
+  cursor: pointer;
+  @include touch.touch();
+
+  @include mq.min768px {
+    display: none;
+  }
+
+  &__bar {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: $bar-height;
+    background-color: $bar-color;
+    transition: all vars.$transition-duration-default vars.$transition-curve-default;
+
+    &:nth-child(1) {
+      top: $center-position - math.div($bar-spacing, 2);
+    }
+    &:nth-child(2) {
+      top: $center-position + math.div($bar-spacing, 2);
+    }
+  }
+
+  &:hover {
+    @include mq.canHover {
+      .mobile-menu-toggle__bar {
+        background-color: $bar-hover-color;
+      }
+    }
+  }
+
+  &[aria-expanded='true'] {
+    .mobile-menu-toggle__bar {
+      &:first-child {
+        transform: translateY(6px) rotate(45deg);
+      }
+      &:last-child {
+        transform: translateY(-6px) rotate(-45deg);
+      }
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid vars.$secondary-500;
+    outline-offset: 2px;
+  }
+}

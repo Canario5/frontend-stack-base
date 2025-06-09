@@ -1,0 +1,59 @@
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/media-queries' as mq;
+@use '../abstracts/spacing' as space;
+@use '../base/typography' as typo;
+
+.main-nav {
+  @include mixins.flex-center;
+
+  @include mq.max767px {
+    position: fixed;
+    inset: 0;
+    background: rgba(vars.$neutral-white, 0.97);
+    transform: translateY(-100%);
+    opacity: 0;
+    z-index: 999;
+    pointer-events: none;
+
+    &.is-active {
+      pointer-events: auto;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: space.range(0, 36);
+    text-align: center;
+
+    @include mq.max767px {
+      flex-direction: column;
+    }
+  }
+
+  &__link {
+    display: flex;
+    @include typo.text('15-16', 'jost', vars.$font-weight-medium);
+    color: vars.$primary-800;
+    padding: space.range(8, 12);
+    transition: color 0.3s vars.$transition-curve-default;
+
+    @include mq.canHover {
+      &:hover {
+        color: vars.$primary-500;
+      }
+    }
+
+    &:focus-visible,
+    &.is-active {
+      color: vars.$link-color-primary;
+      outline: 2px solid vars.$active-color-primary;
+    }
+
+    @include mq.max767px {
+      font-size: var(--text-18-24);
+      padding: 16px;
+    }
+  }
+}

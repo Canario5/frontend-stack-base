@@ -7,35 +7,62 @@
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app">
-      <div class="noice">TEst</div>
-      <svg>
-        <use xlink:href="/__spritemap#sprite-blood"></use>
-      </svg>
+    <header class="header">
+      <div class="header__container">
+        <a href="/" class="header__logo" tabindex="0">MUDr. Tereza Červená</a>
 
-      <button class="btn btn--primary">Navštivte MEDEVIO</button>
+        <nav class="main-nav" id="main-menu">
+          <ul class="main-nav__list">
+            <li class="main-nav__item">
+              <a href="#ordinacni-hodiny" class="main-nav__link" tabindex="0">Ordinační hodiny</a>
+            </li>
+            <li class="main-nav__item">
+              <a href="#sluzby" class="main-nav__link" tabindex="0">Služby</a>
+            </li>
+            <li class="main-nav__item">
+              <a href="#cenik" class="main-nav__link" tabindex="0">Ceník</a>
+            </li>
+            <li class="main-nav__item">
+              <a href="#nas-personal" class="main-nav__link" tabindex="0">Náš personál</a>
+            </li>
+            <li class="main-nav__item">
+              <a href="#aktuality" class="main-nav__link" tabindex="0">Aktuality</a>
+            </li>
+          </ul>
+        </nav>
 
-      <a href="#" class="service-card" aria-label="Přejít na detail služby: Léčba akutních stavů">
-        <div class="service-card__content">
-          <div class="service-card__content__icon">
-            <svg>
-              <use xlink:href="/__spritemap#sprite-infusion"></use>
-            </svg>
-          </div>
-          <h3 class="service-card__content__title">Očkování - Proti tetanu, chřipce, pneumokokům aj.</h3>
-          <p class="service-card__content__text">
-            Lorem ipsum dolor sit amet consectetur. Viverra urna nunc aenean pellentesque euismod quam. Interdum at pulvinar fermentum
-            aliquam tellus.
-          </p>
-        </div>
-        <div class="service-card__action">
+        <a href="#" class="btn btn--primary header__cta" tabindex="0">Rezervace MEDEVIO</a>
+
+        <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-menu" aria-label="Otevřít menu">
+          <span class="mobile-menu-toggle__bar"></span>
+          <span class="mobile-menu-toggle__bar"></span>
+        </button>
+      </div>
+    </header>
+
+    <button class="btn btn--primary">Navštivte MEDEVIO</button>
+
+    <a href="#" class="service-card" aria-label="Přejít na detail služby: Očkování - Proti tetanu, chřipce, pneumokokům aj." tabindex="0">
+      <div class="service-card__content">
+        <div class="service-card__content__icon">
           <svg>
-            <use xlink:href="/__spritemap#sprite-arrow-right"></use>
+            <use xlink:href="/__spritemap#sprite-infusion"></use>
           </svg>
         </div>
-      </a>
+        <h3 class="service-card__content__title">Očkování - Proti tetanu, chřipce, pneumokokům aj.</h3>
+        <p class="service-card__content__text">
+          Lorem ipsum dolor sit amet consectetur. Viverra urna nunc aenean pellentesque euismod quam. Interdum at pulvinar fermentum aliquam
+          tellus.
+        </p>
+      </div>
+      <div class="service-card__action">
+        <svg>
+          <use xlink:href="/__spritemap#sprite-arrow-right"></use>
+        </svg>
+      </div>
+    </a>
 
-      <!--<section>
+    <!--<section>
         <div class="staff-slider swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide" role="group" aria-label="Slide 1">11111111111</div>
@@ -50,7 +77,7 @@
           <button class="swiper-button-next" aria-label="Next">-</button>
         </div>
       </section>-->
-    </div>
+
     <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>

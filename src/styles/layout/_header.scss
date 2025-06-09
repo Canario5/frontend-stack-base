@@ -1,0 +1,54 @@
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/media-queries' as mq;
+@use '../abstracts/spacing' as space;
+@use '../base/typography' as typo;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  background: vars.$neutral-white;
+  box-shadow: 0 3.42px 17.94px 0.85px rgba(48, 123, 196, 0.1);
+  min-height: space.range(72, 124);
+  max-height: 124px;
+  @include mixins.flex-center;
+
+  &__container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    max-width: vars.$site-max-width;
+    padding: var(--size-8) var(--size-12);
+    gap: space.range(6, 24);
+  }
+
+  &__logo {
+    @include typo.text('16-24', 'jost', vars.$font-weight-medium);
+    color: vars.$primary-500;
+    z-index: 1000;
+    flex-shrink: 1;
+
+    @include mq.canHover {
+      &:hover {
+        color: vars.$secondary-500;
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid vars.$active-color-primary;
+      outline-offset: 2px;
+    }
+  }
+
+  &__cta {
+    flex-shrink: 1;
+    flex-grow: 1;
+    min-width: min-content;
+    width: fit-content;
+    text-align: center;
+    margin-left: auto;
+  }
+}

@@ -10,16 +10,20 @@
 @use 'base/reset';
 @use 'base/base';
 @use 'base/fonts';
-@use 'base/typography';
+@use 'base/typography' as typo;
 
 // Utilities
 @use 'utilities/accessibility';
 
 // Components
 @use 'components/button';
+@use 'components/mobile-menu-toggle';
 @use 'components/service-card';
 @use 'components/staff-slider';
 
+// Layout
+@use 'layout/header';
+@use 'layout/menu';
 
 // Pages
 @use 'pages/home';
