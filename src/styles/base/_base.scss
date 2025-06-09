@@ -16,9 +16,8 @@ main {
 
 a {
   color: inherit;
-  @include mixins.text-hover-color(vars.$link-color-primary, 0.2s);
-
   cursor: pointer;
+  @include mixins.text-hover-color(vars.$link-color-primary, 0.2s);
 }
 
 /* Anything that has been anchored to should have extra scroll margin */
