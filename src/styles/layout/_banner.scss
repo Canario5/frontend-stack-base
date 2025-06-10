@@ -1,0 +1,31 @@
+@use '../abstracts/variables' as vars;
+@use '../abstracts/spacing' as space;
+
+.banner {
+  display: grid;
+  justify-items: center;
+  height: 370px;
+  width: 100%;
+  background-color: vars.$primary-500;
+  color: vars.$neutral-white;
+
+  &__container {
+    margin-top: 50px;
+  }
+
+  /*&__circle {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+
+    &--large {
+      width: space.range(300, 600);
+      height: space.range(300, 600);
+    }
+
+    &--top-left {
+      top: space.range(-100, -200);
+      left: space.range(-100, -200);
+    }
+  }*/
+}
