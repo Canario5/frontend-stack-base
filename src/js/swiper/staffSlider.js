@@ -9,18 +9,10 @@ export function initStaffSlider() {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    breakpoints: {
-      768: { slidesPerView: 2 },
-      1024: { slidesPerView: 3 },
-    },
     a11y: {
-      prevSlideMessage: 'prev',
-      nextSlideMessage: 'Next',
-      paginationBulletMessage: 'Move to {{index}}',
+      prevSlideMessage: 'Předchozí člen týmu',
+      nextSlideMessage: 'Další člen týmu',
+      paginationBulletMessage: 'Přejít na snímek {{index}}',
     },
   });
 }

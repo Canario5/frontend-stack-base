@@ -1,10 +1,144 @@
+@use '../abstracts/variables' as vars;
+@use '../abstracts/spacing' as space;
+@use '../abstracts/media-queries' as mq;
+@use '../base/typography' as typo;
 @import 'swiper/swiper-bundle.css';
 
-/*
+.staff {
+  margin-top: var(--size-128);
+}
+
 .staff-slider {
-  .swiper-button-prev,
-  .swiper-button-next {
-    background: red;
+  &__button {
+    color: vars.$primary-500;
+    transition: color vars.$transition-duration-default vars.$transition-curve-default;
+
+    &:focus {
+      color: vars.$primary-600;
+    }
+
+    &:hover {
+      @include mq.canHover {
+        color: vars.$secondary-500;
+      }
+    }
   }
 }
-*/
+
+.staff-slide {
+  display: grid;
+  height: 100%;
+
+  @include mq.min480px {
+    grid-template-areas:
+      'tag image'
+      'info image'
+      'link image';
+
+    margin-left: space.range(38, 128);
+  }
+
+  @include mq.min1280px {
+    grid-template-areas:
+      'tag image info'
+      'tag image info';
+    margin-right: 32px;
+  }
+
+  &__tag {
+    @include mq.min480px {
+      grid-area: tag;
+    }
+
+    @include mq.min1280px {
+      align-self: center;
+    }
+
+    &__position {
+      @include typo.text('24-30', 'grotesk', vars.$font-weight-regular, 1.265);
+      color: vars.$neutral-gray-500;
+      margin-bottom: var(--size-8);
+    }
+
+    &__name {
+      @include typo.text('36-48', 'grotesk', vars.$font-weight-bold, 1.2915);
+      color: vars.$primary-500;
+    }
+  }
+
+  &__description {
+    margin-bottom: var(--size-24);
+
+    @include mq.min480px {
+      grid-area: info;
+    }
+
+    @include mq.min1280px {
+      align-self: center;
+    }
+
+    p {
+      @include typo.text('16-20', 'grotesk', vars.$font-weight-regular, 1.3);
+      max-width: 30ch;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__more {
+    display: inline-flex;
+    align-items: center;
+    @include typo.text('16-20', 'jost', vars.$font-weight-bold);
+    color: vars.$primary-500;
+    text-decoration: underline;
+    transition: color vars.$transition-duration-default vars.$transition-curve-default;
+
+    @include mq.min480px {
+      grid-area: link;
+    }
+
+    @include mq.min1280px {
+      grid-area: info;
+      transform: translatey(4.25em);
+      align-self: center;
+    }
+
+    svg {
+      width: var(--size-20);
+      height: var(--size-20);
+      margin-left: var(--size-12);
+      transition: transform vars.$transition-duration-default vars.$transition-curve-default;
+    }
+
+    &:hover,
+    &:focus {
+      color: vars.$secondary-500;
+
+      svg {
+        transform: translateX(var(--size-4));
+      }
+    }
+  }
+
+  &__image {
+    height: space.range(250, 400);
+
+    @include mq.min480px {
+      grid-area: image;
+    }
+
+    @include mq.min1280px {
+      height: 70svh;
+      margin: 0 32px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+}
