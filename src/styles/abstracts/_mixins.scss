@@ -1,4 +1,6 @@
 @use './variables' as vars;
+@use '../abstracts/spacing' as space;
+@use '../base/typography' as typo;
 
 @mixin flex-center {
   display: flex;
@@ -15,5 +17,21 @@
   transition: color #{$transition-duration} #{$transition-easing} #{$transition-delay};
   &:where(:hover, :focus-visible, :active) {
     color: $color;
+  }
+}
+
+@mixin section-title($color: vars.$neutral-white, $line-width: space.range(64, 105)) {
+  @include typo.text('36-48', 'jost', vars.$font-weight-medium, 1.1);
+  text-transform: capitalize;
+  width: min-content;
+
+  &:after {
+    content: '';
+    display: block;
+    position: relative;
+    top: var(--size-8);
+    width: $line-width;
+    height: 4px;
+    background-color: $color;
   }
 }
