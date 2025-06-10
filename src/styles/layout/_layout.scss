@@ -1,0 +1,18 @@
+@use '../abstracts/variables' as vars;
+@use '../abstracts/spacing' as space;
+
+.container {
+  width: 100%;
+  max-width: vars.$site-max-width;
+  margin: 0 auto;
+  padding-left: space.range(10, 12);
+  padding-right: space.range(10, 12);
+}
+
+.container--content {
+  width: 100%;
+  max-width: vars.$site-max-width;
+  margin: 0 auto;
+  padding-left: space.range(10, 80);
+  padding-right: space.range(10, 80);
+}

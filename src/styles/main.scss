@@ -24,8 +24,10 @@
 @use 'components/hours-box';
 
 // Layout
+@use 'layout/layout';
 @use 'layout/header';
 @use 'layout/menu';
+@use 'layout/panel';
 
 // Pages
 @use 'pages/home/home';

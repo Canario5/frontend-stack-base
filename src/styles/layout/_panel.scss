@@ -1,0 +1,46 @@
+@use '../abstracts/variables' as vars;
+@use '../abstracts/spacing' as space;
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/media-queries' as mq;
+@use '../base/typography' as typo;
+
+.panel {
+  display: grid;
+  justify-items: center;
+  position: relative;
+  background-color: vars.$neutral-white;
+  height: 370px;
+  width: 100%;
+
+  &--primary-bg {
+    background-color: vars.$primary-500;
+    color: vars.$neutral-white;
+  }
+
+  &--secondary-bg {
+    background-color: vars.$secondary-700;
+    color: vars.$neutral-white;
+  }
+
+  &__container {
+    margin-top: 50px;
+  }
+
+  /*&__circle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(vars.$neutral-white, 0.1);
+    z-index: 0;
+
+    &--large {
+      width: space.range(300, 600);
+      height: space.range(300, 600);
+      background-color: rgba(vars.$primary-300, 0.3);
+    }
+
+    &--top-left {
+      top: space.range(-100, -200);
+      left: space.range(-100, -200);
+    }
+  }*/
+}
