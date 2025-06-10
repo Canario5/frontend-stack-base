@@ -99,11 +99,12 @@
 
     @include mq.min480px {
       grid-area: link;
+      margin-bottom: 1em;
     }
 
     @include mq.min1280px {
       grid-area: info;
-      transform: translateY(4.25em);
+      transform: translateY(5.25em);
       align-self: center;
     }
 
