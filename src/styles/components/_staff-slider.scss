@@ -96,10 +96,11 @@
     color: vars.$primary-500;
     text-decoration: underline;
     transition: color vars.$transition-duration-default vars.$transition-curve-default;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
 
     @include mq.min480px {
       grid-area: link;
-      margin-bottom: 1em;
     }
 
     @include mq.min1280px {
