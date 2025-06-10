@@ -42,6 +42,8 @@
     grid-template-areas:
       'tag image info'
       'tag image info';
+    grid-template-columns: auto auto 1fr;
+    column-gap: 24px;
     margin-right: 32px;
   }
 
@@ -101,7 +103,7 @@
 
     @include mq.min1280px {
       grid-area: info;
-      transform: translatey(4.25em);
+      transform: translateY(4.25em);
       align-self: center;
     }
 
@@ -130,8 +132,7 @@
     }
 
     @include mq.min1280px {
-      height: 70svh;
-      margin: 0 32px;
+      height: min(70svh, 700px);
     }
   }
 
