@@ -5,6 +5,7 @@
 @use 'abstracts/mixins' as mixins;
 @use 'abstracts/spacing' as space;
 @use 'abstracts/media-queries' as mq;
+@use 'abstracts/touch' as touch;
 
 // Base
 @use 'base/reset';
