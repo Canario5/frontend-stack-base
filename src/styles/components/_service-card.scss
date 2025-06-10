@@ -77,7 +77,7 @@
 
     &__text {
       grid-area: text;
-      @include typo.text('13-14', 'space-grotesk', vars.$font-weight-regular, 1.57);
+      @include typo.text('13-14', 'grotesk', vars.$font-weight-regular, 1.57);
       color: rgba(vars.$primary-800, 0.6);
       max-width: 285px;
     }

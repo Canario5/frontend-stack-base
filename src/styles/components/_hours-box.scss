@@ -40,7 +40,7 @@ $grid-init: repeat(44, 1fr);
   }
 
   &__time-marker {
-    @include typo.text('13-14', 'space-grotesk', vars.$font-weight-bold, 1.375);
+    @include typo.text('13-14', 'grotesk', vars.$font-weight-bold, 1.375);
     color: vars.$neutral-gray-300;
 
     &--0800h {
@@ -72,7 +72,7 @@ $grid-init: repeat(44, 1fr);
 
   &__time-slot {
     @include mixins.flex-center;
-    @include typo.text('13-14', 'space-grotesk', vars.$font-weight-bold, 1.2);
+    @include typo.text('13-14', 'grotesk', vars.$font-weight-bold, 1.2);
     color: vars.$secondary-500;
     white-space: nowrap;
     background-color: vars.$primary-300;

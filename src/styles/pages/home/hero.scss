@@ -42,7 +42,7 @@ $hero-max-width-text: 48ch;
   }
 
   &__text {
-    @include typo.text('16-20', 'space-grotesk', vars.$font-weight-regular, 1.4);
+    @include typo.text('16-20', 'grotesk', vars.$font-weight-regular, 1.4);
     letter-spacing: 0.015em;
     color: vars.$neutral-gray-300;
     margin-bottom: var(--size-24);
@@ -124,20 +124,20 @@ $hero-max-width-text: 48ch;
     gap: var(--size-8);
 
     &-number {
-      @include typo.text('48-76', 'space-grotesk', vars.$font-weight-bold, 1.275);
+      @include typo.text('48-76', 'grotesk', vars.$font-weight-bold, 1.275);
       letter-spacing: -0.015em;
       color: vars.$secondary-500;
     }
 
     &-text {
-      @include typo.text('20-26', 'space-grotesk', vars.$font-weight-bold, 1.27);
+      @include typo.text('20-26', 'grotesk', vars.$font-weight-bold, 1.27);
       letter-spacing: -0.015em;
       color: vars.$secondary-500;
     }
   }
 
   &__info-text {
-    @include typo.text('16-20', 'space-grotesk', vars.$font-weight-regular, 1.285);
+    @include typo.text('16-20', 'grotesk', vars.$font-weight-regular, 1.285);
     letter-spacing: 0.0015em;
     color: vars.$neutral-gray-300;
     margin-top: var(--size-16);
@@ -162,7 +162,7 @@ $hero-max-width-text: 48ch;
   }
 
   &__note-text {
-    @include typo.text('13-14', 'space-grotesk', vars.$font-weight-regular, 1.285);
+    @include typo.text('13-14', 'grotesk', vars.$font-weight-regular, 1.285);
     color: vars.$neutral-gray-300;
   }
 
