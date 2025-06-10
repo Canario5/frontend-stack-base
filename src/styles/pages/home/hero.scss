@@ -15,9 +15,9 @@ $hero-max-width-text: 48ch;
     display: grid;
     grid-template-columns: 1fr;
     place-items: center;
-    max-width: vars.$site-max-width;
     column-gap: var(--size-40);
-    padding: space.range(40, 88) space.range(8, 32);
+    padding-top: space.range(40, 88);
+    padding-bottom: space.range(40, 88);
 
     @include mq.min768px {
       grid-template-columns: minmax(0, 577px) minmax(0, 577px);
