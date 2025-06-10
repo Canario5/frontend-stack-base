@@ -18,7 +18,14 @@ export function initMobileMenu() {
     isMenuOpen = true;
     menuToggle.setAttribute('aria-expanded', 'true');
     mainMenu.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden'; //* this disabling/enabling scrolling
+
+    // GSAP block scrolling
+    gsap.set([document.body, document.documentElement], {
+      overflow: 'hidden',
+      height: '100%',
+      touchAction: 'none',
+    });
+
     gsap.to(mainMenu, { y: 0, opacity: 1, duration: 0.3, ease: 'power2.out' });
 
     if (isMobile()) {
@@ -30,7 +37,14 @@ export function initMobileMenu() {
     isMenuOpen = false;
     menuToggle.setAttribute('aria-expanded', 'false');
     mainMenu.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
+
+    // GSAP enable scrolling
+    gsap.set([document.body, document.documentElement], {
+      overflow: '',
+      height: '',
+      touchAction: '',
+    });
+
     gsap.to(mainMenu, { y: '-100%', opacity: 0, duration: 0.2, ease: 'power2.in' });
 
     if (isMobile()) {
@@ -49,7 +63,13 @@ export function initMobileMenu() {
       mainMenu.style.transform = '';
       mainMenu.style.opacity = '';
       mainMenu.style.display = 'block';
-      document.body.style.overflow = '';
+
+      // GSAP enable scroll
+      gsap.set([document.body, document.documentElement], {
+        overflow: '',
+        height: '',
+        touchAction: '',
+      });
 
       menuLinks.forEach((link) => link.setAttribute('tabindex', '0'));
     }

@@ -10,7 +10,7 @@
   @include mq.max767px {
     position: fixed;
     inset: 0;
-    background: rgba(vars.$neutral-white, 0.97);
+    background: rgba(vars.$neutral-white, 0.98);
     transform: translateY(-100%);
     opacity: 0;
     z-index: 999;
