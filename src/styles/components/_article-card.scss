@@ -1,0 +1,82 @@
+@use '../abstracts/variables' as vars;
+@use '../abstracts/spacing' as space;
+@use '../abstracts/media-queries' as media;
+@use '../base/typography' as type;
+
+.article-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 387px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  &:hover,
+  &:focus {
+    .article-card__title {
+      color: vars.$primary-500;
+    }
+
+    .article-card__image img {
+      transform: scale(1.05);
+    }
+
+    .article-card__link {
+      color: vars.$secondary-500;
+
+      svg {
+        transform: translateX(8px);
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 387/264;
+    overflow: hidden;
+    border-radius: 20px;
+
+    img {
+      transition: transform vars.$transition-duration-default vars.$transition-curve-default;
+    }
+  }
+
+  &__content {
+    padding: var(--size-20);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  &__date {
+    color: vars.$secondary-500;
+    margin-bottom: var(--size-16);
+    @include type.text('16-20', 'jost', vars.$font-weight-medium, 1.335);
+  }
+
+  &__title {
+    color: vars.$color-text;
+    margin-bottom: var(--size-20);
+    transition: color vars.$transition-duration-default vars.$transition-curve-default;
+    @include type.text('21-28', 'jost', vars.$font-weight-bold, 1.4);
+  }
+
+  &__text {
+    color: vars.$color-text;
+    margin-bottom: var(--size-32);
+    @include type.text('16-20', 'grotesk', vars.$font-weight-regular, 1.335);
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    color: vars.$primary-500;
+    @include type.text('16-20', 'josk', vars.$font-weight-bold, 1.335);
+
+    svg {
+      width: 20px;
+      height: 20px;
+      margin-left: var(--size-8);
+      transition: transform vars.$transition-duration-default vars.$transition-curve-default;
+    }
+  }
+}
