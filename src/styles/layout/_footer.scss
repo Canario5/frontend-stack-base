@@ -20,12 +20,12 @@
   }
 
   &__title {
-    padding-top: var(--size-80);
-    padding-bottom: var(--size-80);
+    padding-top: space.range(15, 80);
     @include typo.text('32-55', 'jakarta', vars.$font-weight-extra-bold, 1.21);
 
     @include media.min768px {
       max-width: 15ch;
+      padding-bottom: space.range(15, 80);
     }
   }
 
@@ -36,5 +36,9 @@
 
   &__address {
     @include typo.text('16-20', 'jakarta', vars.$font-weight-regular, 1.335);
+
+    @include media.max767px {
+      margin-bottom: 24px;
+    }
   }
 }
