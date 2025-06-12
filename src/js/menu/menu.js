@@ -18,15 +18,18 @@ export function initMobileMenu() {
     isMenuOpen = true;
     menuToggle.setAttribute('aria-expanded', 'true');
     mainMenu.setAttribute('aria-hidden', 'false');
+    mainMenu.classList.add('is-active');
+    document.body.classList.add('no-scroll');
 
-    // GSAP block scrolling
-    gsap.set([document.body, document.documentElement], {
-      overflow: 'hidden',
-      height: '100%',
-      touchAction: 'none',
+    gsap.to(mainMenu, {
+      y: 0,
+      opacity: 1,
+      duration: 0.3,
+      ease: 'power2.out',
+      onComplete: () => {
+        menuLinks[0]?.focus();
+      },
     });
-
-    gsap.to(mainMenu, { y: 0, opacity: 1, duration: 0.3, ease: 'power2.out' });
 
     if (isMobile()) {
       menuLinks.forEach((link) => link.setAttribute('tabindex', '0'));
@@ -37,15 +40,15 @@ export function initMobileMenu() {
     isMenuOpen = false;
     menuToggle.setAttribute('aria-expanded', 'false');
     mainMenu.setAttribute('aria-hidden', 'true');
+    mainMenu.classList.remove('is-active');
+    document.body.classList.remove('no-scroll');
 
-    // GSAP enable scrolling
-    gsap.set([document.body, document.documentElement], {
-      overflow: '',
-      height: '',
-      touchAction: '',
+    gsap.to(mainMenu, {
+      y: '-100%',
+      opacity: 0,
+      duration: 0.2,
+      ease: 'power2.in',
     });
-
-    gsap.to(mainMenu, { y: '-100%', opacity: 0, duration: 0.2, ease: 'power2.in' });
 
     if (isMobile()) {
       menuLinks.forEach((link) => link.setAttribute('tabindex', '-1'));
@@ -64,12 +67,7 @@ export function initMobileMenu() {
       mainMenu.style.opacity = '';
       mainMenu.style.display = 'block';
 
-      // GSAP enable scroll
-      gsap.set([document.body, document.documentElement], {
-        overflow: '',
-        height: '',
-        touchAction: '',
-      });
+      document.body.classList.remove('no-scroll');
 
       menuLinks.forEach((link) => link.setAttribute('tabindex', '0'));
     }

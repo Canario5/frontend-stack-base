@@ -1,0 +1,10 @@
+@use '../abstracts/variables' as vars;
+@use '../abstracts/media-queries' as mq;
+
+.no-scroll {
+  overflow: hidden !important;
+  height: 100%;
+  touch-action: none;
+  position: fixed;
+  width: 100%;
+}

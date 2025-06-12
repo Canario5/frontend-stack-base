@@ -13,9 +13,6 @@
 @use 'base/fonts';
 @use 'base/typography' as typo;
 
-// Utilities
-@use 'utilities/accessibility';
-
 // Components
 @use 'components/button';
 @use 'components/mobile-menu-toggle';
@@ -33,3 +30,7 @@
 
 // Pages
 @use 'pages/home/home';
+
+// Utilities
+@use 'utilities/accessibility';
+@use 'utilities/scroll';
