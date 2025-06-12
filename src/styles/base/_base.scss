@@ -23,5 +23,5 @@ a {
 /* Anything that has been anchored to should have extra scroll margin */
 // https://piccalil.li/blog/a-more-modern-css-reset/
 :target {
-  scroll-margin-block: 5ex;
+  scroll-margin-block: 95px; //? Magic value but it works nicely? Maybe some calc with header height would be better?
 }
