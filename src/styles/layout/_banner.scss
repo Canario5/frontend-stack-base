@@ -8,24 +8,10 @@
   width: 100%;
   background-color: vars.$primary-500;
   color: vars.$neutral-white;
+  overflow: hidden; //* for animation of the rings.scss
 
   &__container {
-    margin-top: 50px;
+    position: relative; //* for animation of the rings.scss
+    padding-top: 50px;
   }
-
-  /*&__circle {
-    position: absolute;
-    border-radius: 50%;
-    z-index: 0;
-
-    &--large {
-      width: space.range(300, 600);
-      height: space.range(300, 600);
-    }
-
-    &--top-left {
-      top: space.range(-100, -200);
-      left: space.range(-100, -200);
-    }
-  }*/
 }

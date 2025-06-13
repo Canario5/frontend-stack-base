@@ -7,4 +7,8 @@
   .section-title {
     @include mixins.section-title();
   }
+
+  .ring--big {
+    top: 60px;
+  }
 }

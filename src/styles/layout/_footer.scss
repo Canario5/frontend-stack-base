@@ -6,13 +6,25 @@
 .footer {
   background-color: vars.$secondary-500;
   color: vars.$neutral-white;
-  padding: var(--size-12) 0;
+  overflow: hidden; //* for animation of the rings.scss
 
   &__container {
+    position: relative; //* for animation of the rings.scss
+  }
+
+  .ring--small {
+    top: -75px;
+  }
+  .ring--big {
+    top: -60px;
+  }
+
+  &__content {
     display: grid;
     justify-items: center;
     align-items: center;
     gap: var(--size-40);
+    padding: var(--size-12) 0;
 
     @include media.min768px {
       grid-template-columns: 1fr 1fr 1fr;

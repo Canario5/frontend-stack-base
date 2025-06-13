@@ -1,0 +1,28 @@
+@use '../../abstracts/variables' as vars;
+
+.ring {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  &--small {
+    svg {
+      position: absolute;
+      top: 28px;
+      left: -65px;
+      width: 405px;
+      height: 405px;
+    }
+  }
+
+  &--big {
+    svg {
+      position: absolute;
+      top: -4px;
+      right: -314px;
+      width: 629px;
+      height: 629px;
+    }
+  }
+}
