@@ -1,6 +1,6 @@
 @use '../abstracts/variables' as vars;
 @use '../abstracts/spacing' as space;
-@use '../abstracts/media-queries' as media;
+@use '../abstracts/media-queries' as mq;
 @use '../base/typography' as type;
 
 .article-card {

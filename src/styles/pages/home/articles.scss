@@ -1,6 +1,6 @@
 @use '../../abstracts/variables' as vars;
 @use '../../abstracts/spacing' as space;
-@use '../../abstracts/media-queries' as media;
+@use '../../abstracts/media-queries' as mq;
 @use '../../abstracts/mixins' as mixins;
 @use '../../base/typography' as type;
 
@@ -21,11 +21,11 @@
     gap: var(--size-48) var(--size-64);
     margin-bottom: var(--size-56);
 
-    @include media.min768px {
+    @include mq.min768px {
       grid-template-columns: repeat(2, 1fr);
     }
 
-    @include media.min1024px {
+    @include mq.min1024px {
       grid-template-columns: repeat(3, 1fr);
     }
   }
