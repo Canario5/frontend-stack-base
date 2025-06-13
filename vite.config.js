@@ -6,7 +6,7 @@ export default defineConfig({
     VitePluginSvgSpritemap('src/assets/svg/*.svg', {
       styles: {
         filename: 'src/styles/spritemap.scss',
-        format: 'scss',
+        lang: 'scss',
       },
       svgo: {
         plugins: [
@@ -19,10 +19,15 @@ export default defineConfig({
                   currentColor: true,
                 },
                 removeViewBox: false,
+
+                cleanupIds: {
+                  preservePrefixes: ['sprite-'],
+                },
               },
             },
           },
           // Additional plugins can be added here
+          'removeDimensions',
           {
             name: 'removeStyleElement',
           },
