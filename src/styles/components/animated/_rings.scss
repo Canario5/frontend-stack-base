@@ -1,4 +1,5 @@
 @use '../../abstracts/variables' as vars;
+@use '../../abstracts/spacing' as space;
 
 .ring {
   position: absolute;
@@ -9,20 +10,20 @@
   &--small {
     svg {
       position: absolute;
-      top: 28px;
-      left: -65px;
-      width: 405px;
-      height: 405px;
+      top: space.range(10, 28);
+      left: space.range(-30, -65);
+      width: space.range(150, 405);
+      height: space.range(150, 405);
     }
   }
 
   &--big {
     svg {
       position: absolute;
-      top: -4px;
-      right: -314px;
-      width: 629px;
-      height: 629px;
+      top: space.range(-20, -4);
+      right: space.range(-100, -314);
+      width: space.range(250, 629);
+      height: space.range(250, 629);
     }
   }
 }

@@ -1,6 +1,6 @@
 @use '../abstracts/variables' as vars;
 @use '../abstracts/spacing' as space;
-@use '../abstracts/media-queries' as media;
+@use '../abstracts/media-queries' as mq;
 @use '../base/typography' as typo;
 
 .footer {
@@ -10,6 +10,12 @@
 
   &__container {
     position: relative; //* for animation of the rings.scss
+  }
+
+  .ring {
+    @include mq.max1023px {
+      display: none;
+    }
   }
 
   .ring--small {
@@ -26,7 +32,7 @@
     gap: var(--size-40);
     padding: var(--size-12) 0;
 
-    @include media.min768px {
+    @include mq.min768px {
       grid-template-columns: 1fr 1fr 1fr;
     }
   }
@@ -35,7 +41,7 @@
     padding-top: space.range(15, 80);
     @include typo.text('32-55', 'jakarta', vars.$font-weight-extra-bold, 1.21);
 
-    @include media.min768px {
+    @include mq.min768px {
       max-width: 15ch;
       padding-bottom: space.range(15, 80);
     }
@@ -49,7 +55,7 @@
   &__address {
     @include typo.text('16-20', 'jakarta', vars.$font-weight-regular, 1.335);
 
-    @include media.max767px {
+    @include mq.max767px {
       margin-bottom: 24px;
     }
   }
