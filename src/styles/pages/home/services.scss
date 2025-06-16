@@ -11,7 +11,7 @@
     justify-content: center;
     justify-items: center;
     position: relative;
-    z-index: 2; //* Higher than panel
+    z-index: 2; //* Higher than banner
     transform: translateY(-200px);
     margin-bottom: -200px;
   }
@@ -20,7 +20,7 @@
     @include mixins.section-title();
 
     @include mq.maxFull {
-      margin: 0 auto;
+      justify-self: center;
     }
   }
 }
