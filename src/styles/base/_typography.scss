@@ -30,6 +30,7 @@ html {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
+  font-size: 100%;
 }
 
 body {
@@ -40,7 +41,7 @@ body {
   line-height: vars.$line-height-base;
   color: vars.$color-text;
   font-weight: vars.$font-weight-regular;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 h1,

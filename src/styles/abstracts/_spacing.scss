@@ -1,3 +1,7 @@
+@use 'utopia-core-scss/src/utopia' as utopia;
+@use './variables' as vars;
+@use 'sass:string';
+
 //! TODO: Change site min and max values to variables from variables
 
 // SPACING (in px)
@@ -12,11 +16,17 @@ $spacing-sizes: (4, 8, 12, 16, 20, 24, 32, 40, 48, 56, 64, 80, 96, 128, 160, 192
     $min-size: $size * 0.7;
     $max-size: $size;
 
-    --size-#{$size}: clamp(
-      #{$min-size}px,
-      #{$min-size}px + (#{$max-size - $min-size}) * (100vw - 320px) / (1367 - 320),
-      #{$max-size}px
-    );
+    --size-#{$size}: #{string.unquote(
+        utopia.calculateClamp(
+          (
+            'minWidth': 320,
+            'maxWidth': 1367,
+            'minSize': $min-size,
+            'maxSize': $max-size,
+            'usePx': false,
+          )
+        )
+      )};
   }
 }
 
@@ -27,9 +37,15 @@ $spacing-sizes: (4, 8, 12, 16, 20, 24, 32, 40, 48, 56, 64, 80, 96, 128, 160, 192
 // padding-right: space.range(8, 16);
 
 @function range($min-size, $max-size) {
-  @return clamp(
-    #{$min-size}px,
-    #{$min-size}px + (#{$max-size - $min-size}) * (100vw - 320px) / (1367 - 320),
-    #{$max-size}px
+  @return string.unquote(
+    utopia.calculateClamp(
+      (
+        'minWidth': 320,
+        'maxWidth': 1367,
+        'minSize': $min-size,
+        'maxSize': $max-size,
+        'usePx': false,
+      )
+    )
   );
 }
