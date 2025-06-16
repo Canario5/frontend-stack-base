@@ -3,8 +3,6 @@
 @use './variables' as vars;
 @use 'sass:string';
 
-//! TODO: Change site min and max values to variables from variables
-
 // SPACING (in px)
 $spacing-sizes: (4, 8, 12, 16, 20, 24, 32, 40, 48, 56, 64, 80, 96, 128, 160, 192, 224, 256);
 
@@ -31,18 +29,18 @@ $spacing-sizes: (4, 8, 12, 16, 20, 24, 32, 40, 48, 56, 64, 80, 96, 128, 160, 192
   }
 }
 
-//? Maybe in future add start and end range?
-//* HOW TO USE: //
+//* HOW TO USE:
 // import in file with @use '../abstracts/spacing' as space;
-// padding-right: space.range(minValuePx, maxValuePx);
-// padding-right: space.range(8, 16);
+// padding-right: space.range(minValuePx, maxValuePx); -> padding-right: space.range(8, 16);
+// padding-right: space.range(minValuePx, maxValuePx, fromWidth, toWidth); -> padding-right: space.range(8, 16, 320px, 1440px);
+//
 
-@function range($min-size, $max-size) {
+@function range($min-size, $max-size, $min-width: vars.$site-min-width, $max-width: vars.$site-max-width) {
   @return string.unquote(
     utopia.calculateClamp(
       (
-        'minWidth': 320,
-        'maxWidth': 1367,
+        'minWidth': fn.strip-unit($min-width),
+        'maxWidth': fn.strip-unit($max-width),
         'minSize': $min-size,
         'maxSize': $max-size,
         'usePx': false,
