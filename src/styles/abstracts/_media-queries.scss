@@ -1,66 +1,64 @@
+@use '../abstracts/variables' as vars;
+
 @mixin max479px {
-  @media (max-width: 29.9375rem) {
+  @media (max-width: 479px) {
     @content;
   }
 }
-
 @mixin min480px {
-  @media (min-width: 30rem) {
+  @media (min-width: 480px) {
     @content;
   }
 }
 
 @mixin max767px {
-  @media (max-width: 47.9375rem) {
+  @media (max-width: 767px) {
     @content;
   }
 }
-
 @mixin min768px {
-  @media (min-width: 48rem) {
+  @media (min-width: 768px) {
     @content;
   }
 }
 
 @mixin max1023px {
-  @media (max-width: 63.9375rem) {
+  @media (max-width: 1023px) {
     @content;
   }
 }
-
 @mixin min1024px {
-  @media (min-width: 64rem) {
+  @media (min-width: 1024px) {
     @content;
   }
 }
 
 @mixin max1279px {
-  @media (max-width: 79.9375rem) {
+  @media (max-width: 1279px) {
     @content;
   }
 }
-
 @mixin min1280px {
-  @media (min-width: 80rem) {
+  @media (min-width: 1280px) {
     @content;
   }
 }
 
 @mixin maxFull {
-  @media (max-width: 85.375rem) {
+  @media (max-width: vars.$site-max-width) {
     @content;
   }
 }
-
 @mixin minFull {
-  @media (min-width: 85.4375rem) {
+  $min-value: vars.$site-max-width - 1px;
+  @media (min-width: $min-value) {
     @content;
   }
 }
 
 /* 768px to 1023px */
 @mixin tabletOnly {
-  @media (min-width: 48rem) and (max-width: 63.9375rem) {
+  @media (min-width: 768px) and (max-width: 1023px) {
     @content;
   }
 }
