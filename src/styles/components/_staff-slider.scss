@@ -4,11 +4,9 @@
 @use '../base/typography' as typo;
 @import 'swiper/swiper-bundle.css';
 
-.staff {
-  margin-top: var(--size-128);
-}
-
 .staff-slider {
+  padding-top: var(--size-128);
+
   &__button {
     color: vars.$primary-500;
     transition: color vars.$transition-duration-default vars.$transition-curve-default;
@@ -21,6 +19,23 @@
       @include mq.canHover {
         color: vars.$secondary-500;
       }
+    }
+  }
+
+  .gradient-circle {
+    &--big {
+      top: 27.5% !important;
+      left: 25%;
+      background: rgba(vars.$secondary-500, 0.25);
+    }
+
+    &--small {
+      top: 13%;
+      left: 57.5%;
+    }
+
+    @include mq.max1279px {
+      display: none;
     }
   }
 }
