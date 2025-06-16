@@ -7,9 +7,15 @@ $max-height-of-main-items: 548px;
 $hero-max-width-text: 48ch;
 
 .hero {
-  display: grid;
-  place-items: center;
+  position: relative;
   background-color: vars.$primary-100;
+
+  .gradient-circle {
+    top: 52%;
+    left: 56%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+  }
 
   &__container {
     display: grid;
@@ -18,6 +24,8 @@ $hero-max-width-text: 48ch;
     column-gap: var(--size-40);
     padding-top: space.range(40, 88);
     padding-bottom: space.range(40, 88);
+    position: relative;
+    z-index: 1;
 
     @include mq.min768px {
       grid-template-columns: minmax(0, 577px) minmax(0, 577px);
@@ -63,6 +71,10 @@ $hero-max-width-text: 48ch;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
 
     max-height: $max-height-of-main-items;
+
+    @include mq.max479px {
+      overflow-x: hidden; //* on smallest sizes its better
+    }
 
     @include mq.min768px {
       aspect-ratio: 577 / 548;

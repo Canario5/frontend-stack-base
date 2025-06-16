@@ -1,0 +1,20 @@
+@use '../abstracts/variables' as vars;
+
+.gradient-circle {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 50%;
+  filter: blur(80px);
+  background: rgba(vars.$primary-500, 0.25);
+
+  &--big {
+    width: 576px;
+    height: 576px;
+  }
+
+  &--small {
+    width: 379px;
+    height: 379px;
+  }
+}
