@@ -8,6 +8,7 @@ $hero-max-width-text: 48ch;
 
 .hero {
   position: relative;
+  overflow: hidden;
   background-color: vars.$primary-100;
 
   .gradient-circle {
