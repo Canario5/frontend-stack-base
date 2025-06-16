@@ -55,6 +55,7 @@ $hero-max-width-text: 48ch;
 
   //* Hours-box
   &__hours {
+    position: relative; //* for the ring image
     background-color: vars.$neutral-white;
     border-radius: 0 var(--size-128) 0 0;
     padding: var(--size-32);
@@ -70,6 +71,19 @@ $hero-max-width-text: 48ch;
 
     @include mq.min1024px {
       padding: 40px 80px 50px 50px;
+    }
+
+    .ring {
+      overflow: hidden; //* for the ring image
+
+      svg {
+        color: vars.$primary-100;
+
+        @include mq.max767px {
+          top: 22%;
+          left: 5%;
+        }
+      }
     }
 
     &-title {
