@@ -1,12 +1,13 @@
 @use 'utopia-core-scss/src/utopia' as utopia;
+@use '../abstracts/functions' as fn;
 @use '../abstracts/variables' as vars;
 
 //!TODO: check how it will work with variables with units (and rems)
 :root {
   @include utopia.generateClamps(
     (
-      'minWidth': 320,
-      'maxWidth': 1367,
+      'minWidth': fn.strip-unit(vars.$site-min-width),
+      'maxWidth': fn.strip-unit(vars.$site-max-width),
       'pairs': (
         (48, 76),
         (38, 60),

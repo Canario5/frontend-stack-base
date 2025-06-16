@@ -1,0 +1,10 @@
+@use 'sass:math';
+@use 'sass:meta';
+
+//* Strip units and return clean number value like 31rem -> 31; 258px -> 258
+@function strip-unit($value) {
+  @if meta.type-of($value) == 'number' and not math.is-unitless($value) {
+    @return math.div($value, ($value * 0 + 1));
+  }
+  @return $value;
+}

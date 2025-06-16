@@ -1,4 +1,5 @@
 @use 'utopia-core-scss/src/utopia' as utopia;
+@use './functions' as fn;
 @use './variables' as vars;
 @use 'sass:string';
 
@@ -19,8 +20,8 @@ $spacing-sizes: (4, 8, 12, 16, 20, 24, 32, 40, 48, 56, 64, 80, 96, 128, 160, 192
     --size-#{$size}: #{string.unquote(
         utopia.calculateClamp(
           (
-            'minWidth': 320,
-            'maxWidth': 1367,
+            'minWidth': fn.strip-unit(vars.$site-min-width),
+            'maxWidth': fn.strip-unit(vars.$site-max-width),
             'minSize': $min-size,
             'maxSize': $max-size,
             'usePx': false,
