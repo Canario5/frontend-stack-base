@@ -52,7 +52,12 @@ export default defineConfig({
           { width: 375, height: 667 },
           { width: 1280, height: 720 },
           { width: 1600, height: 880 },
+          { width: 2500, height: 1440 },
         ],
+        penthouse: {
+          forceInclude: ['.service-card__action'],
+          /*forceExclude: ['.footer__content'],*/
+        },
       },
     }),
   ],

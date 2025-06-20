@@ -10,10 +10,7 @@
     gap: var(--size-40) var(--size-16);
     justify-content: center;
     justify-items: center;
-    position: relative;
-    z-index: 2; //* Higher than banner
-    transform: translateY(-200px);
-    margin-bottom: -200px;
+    margin-top: -200px;
   }
 
   .section-title {

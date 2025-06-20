@@ -13,6 +13,7 @@
   box-shadow: 0 3.42px 17.94px 0.85px rgba(48, 123, 196, 0.1);
   padding: var(--size-32) var(--size-8) var(--size-8) var(--size-20);
   position: relative;
+  aspect-ratio: 444/288;
 
   &::before {
     content: '';
@@ -54,7 +55,7 @@
       'space text';
     column-gap: var(--size-12);
     row-gap: var(--size-12);
-    margin-bottom: 60px;
+    overflow: hidden;
 
     position: relative;
     z-index: 1;
@@ -64,7 +65,7 @@
       display: flex;
       align-self: center;
       width: var(--size-64);
-      height: 64px;
+      aspect-ratio: 1;
       color: vars.$secondary-500;
       padding: var(--size-8);
     }
@@ -93,9 +94,11 @@
     height: 60px;
     border-radius: 8px 0 16px 0;
     background: rgba(vars.$primary-500, 1);
+    z-index: 2;
 
     svg {
       width: 30px;
+      aspect-ratio: 1;
       color: vars.$neutral-white;
       transition: color vars.$transition-duration-default vars.$transition-curve-default 0.05s;
     }
