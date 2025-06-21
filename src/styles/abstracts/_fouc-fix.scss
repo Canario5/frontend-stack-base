@@ -1,0 +1,9 @@
+//* 1) in index.html is inlined --decorative-visibility: hidden; which applies until overridden
+//* 2) FOUC elements needs to have visibility: var(--decorative-visibility);
+//* 3) in postcss.config.js for PurgeCSS is disabled to remove this css var
+//* 4) in vite.config.js for critical css is disabled to include this css var declaration into critical css - ignore: { decl: '--decorative-visibility' }
+//* 5) When main css style loads it contains overwriting original value to --decorative-visibility: visible; which makes decorative elements visible when everything is in place
+
+:root {
+  --decorative-visibility: visible;
+}

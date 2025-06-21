@@ -7,6 +7,7 @@
   border-radius: 50%;
   filter: blur(80px);
   background: rgba(vars.$primary-500, 0.25);
+  visibility: var(--decorative-visibility); //* FOUC FIX
 
   &--big {
     width: 576px;

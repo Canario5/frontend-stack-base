@@ -47,7 +47,7 @@ export default defineConfig({
       ],
       criticalConfig: {
         inline: true,
-        extract: false,
+        extract: true,
         dimensions: [
           { width: 375, height: 667 },
           { width: 1280, height: 720 },
@@ -58,6 +58,7 @@ export default defineConfig({
           forceInclude: ['.service-card__action'],
           /*forceExclude: ['.footer__content'],*/
         },
+        ignore: { decl: '--decorative-visibility' }, //! Ignore syntax according to https://github.com/bezoerb/postcss-discard
       },
     }),
   ],

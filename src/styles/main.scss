@@ -7,6 +7,7 @@
 @use 'abstracts/spacing' as space;
 @use 'abstracts/media-queries' as mq;
 @use 'abstracts/touch' as touch;
+@use 'abstracts/fouc-fix';
 
 // Base
 @use 'base/reset';
