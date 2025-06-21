@@ -6,7 +6,9 @@
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100dvh;
+  max-width: 100dvw;
+  overflow-x: hidden;
   background-color: vars.$background-color;
 }
 
@@ -23,5 +25,5 @@ a {
 /* Anything that has been anchored to should have extra scroll margin */
 // https://piccalil.li/blog/a-more-modern-css-reset/
 :target {
-  scroll-margin-block: 95px; //? Magic value but it works nicely? Maybe some calc with header height would be better?
+  scroll-margin-block: 95px; //? TODO: Magic value but it works nicely? Maybe some calc with header height would be better?
 }
