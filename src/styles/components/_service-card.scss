@@ -82,6 +82,7 @@
       @include typo.text('13-14', 'grotesk', vars.$font-weight-regular, 1.57);
       color: rgba(vars.$primary-800, 0.6);
       max-width: 285px;
+      margin-bottom: 12px;
     }
   }
 
