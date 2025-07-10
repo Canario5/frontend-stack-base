@@ -18,22 +18,16 @@
 // Components
 @use 'components/button';
 @use 'components/mobile-menu-toggle';
-@use 'components/service-card';
 @use 'components/staff-slider';
-@use 'components/hours-box';
-@use 'components/article-card';
-@use 'components/gradient-circles';
-@use 'components/animated/rings';
 
 // Layout
 @use 'layout/layout';
 @use 'layout/header';
 @use 'layout/footer';
 @use 'layout/menu';
-@use 'layout/banner';
 
 // Pages
-@use 'pages/home/home';
+@use 'pages/home/hero';
 
 // Utilities
 @use 'utilities/accessibility';

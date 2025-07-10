@@ -3,7 +3,6 @@ import pxtorom from '@minko-fe/postcss-pxtorem';
 import autoprefixer from 'autoprefixer';
 import combineDuplicatedSelectors from 'postcss-combine-duplicated-selectors';
 import { purgeCSSPlugin } from '@fullhuman/postcss-purgecss';
-import cssnano from 'cssnano';
 
 export default {
   plugins: [
@@ -21,9 +20,6 @@ export default {
         variables: ['--decorative-visibility'],
       },
       variables: true,
-    }),
-    cssnano({
-      preset: 'default',
     }),
   ],
 };
